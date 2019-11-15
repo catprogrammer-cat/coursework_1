@@ -9,7 +9,7 @@ void fill_randomly_array2d(int array2d[][5]){
     srand ( time(0) );
     for (int i=0; i<5; i++){
         for (int j=0; j<5; j++){
-            array2d[i][j] = rand() % 100 + 1; 
+            array2d[i][j] = rand() % 200 + 1 - 100; 
         }
     }
 }
@@ -42,7 +42,7 @@ int main()
         cout << "[" << array1d[i]<< "]";
     }
     // declare for loop of find max element
-    int max = 0;
+    int max = array1d[0];
     // find max element
     for(int i=0; i<5;i++){
         if(array1d[i] > max){
@@ -66,6 +66,7 @@ int main()
     
     return 0;
 }
+
 //0 : 46 93 26 40 58 ;                                                                     
 //1 : 80 52 77 68 73 ;                                                                     
 //2 : 61 13 80 91 16 ;                                                                     
