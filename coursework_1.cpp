@@ -24,6 +24,32 @@ void print_array2d(int array2d[][5]) {
     }
 }
 
+int return_max_element(int array1d[]){
+    // declare for loop of find max element
+    int max = array1d[0];
+    for(int i=0; i<5;i++){
+        if(array1d[i] > max){
+            max = array1d[i];
+        }
+    }
+    
+    return max;
+    
+}
+
+int return_index_max_element(int array1d[]){
+    
+    int index = 0;
+	while (index < 5)
+	{
+		if (array1d[index] == return_max_element(array1d)) {
+			break;
+		}
+		index++;
+	}
+	return index;
+}
+
 int main()
 {
     // declare 'array2d' and 'array1d'
@@ -42,26 +68,12 @@ int main()
         cout << "[" << array1d[i]<< "]";
     }
     // declare for loop of find max element
-    int max = array1d[0];
-    // find max element
-    for(int i=0; i<5;i++){
-        if(array1d[i] > max){
-            max = array1d[i];
-        }
-    }
-    //find index of max element
-    int index = 0;
-	while (index < 5)
-	{
-		if (array1d[index] == max) {
-			break;
-		}
-		index++;
-	}
-	//output max value and index of max value of 'array1d'
-	cout << "\nValue of max element\t" << max << endl;
+
     
-	cout << "Index of max element\t" << index << endl;
+	//output max value and index of max value of 'array1d'
+	cout << "\nValue of max element\t" << return_max_element(array1d) << endl;
+    
+	cout << "Index of max element\t" << return_index_max_element(array1d) << endl;
     
     
     return 0;
