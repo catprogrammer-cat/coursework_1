@@ -37,13 +37,14 @@ void calculate(int array2d[][5],int array1d[],int quantity){
     int reverse = 0;
     //second calculation of second side
     for(int num = 0; num<3; num++){
-        calculation = num - 3;
-        reverse = num - 4; 
+        calculation = num - 3; // 0 - (-3); ?? 1 - (-2)
+        
         sum = 0;
-        for(int i = 0;i<5-abs(calculation);i++){
-            sum += abs(array2d[i][5-1-i+calculation-reverse]);
+        for(int i = 4;i>=0+abs(calculation);i--){
+            sum += abs(array2d[i][abs(5-1-i-calculation)]);
         }
     array1d[num+4] = sum;
+    int reverse[3]; // second part of diagonals
     }
     for(int i = 0; i < 7; i++) {
         cout << "[" << array1d[i] << "]";
